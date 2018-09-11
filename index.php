@@ -1,11 +1,5 @@
-<?php require_once 'class/class_user.php'; 
-$usuario = new usuario();
-if (isset($_POST['grabar']) and $_POST['grabar']=='si')
-{
-	$usuario->nueva_sesion();
-}else{
-	
-}
+<?php
+
 ?>
 <html lang="en">
 <head>
@@ -40,36 +34,14 @@ if (isset($_POST['grabar']) and $_POST['grabar']=='si')
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form" name="form" action="" method="post">
+				<form class="login100-form validate-form" name="form" action="model/login.php" method="post">
 					<span class="login100-form-title p-b-70">
 						Welcome
 					</span>
 					<span class="login100-form-avatar">
 						<img src="images/avatar-01.jpg" alt="AVATAR">
 					</span>
-					
 
-					<?php
-		            if(isset($_GET['usuario']))
-		            {
-		            switch ($_GET['usuario']) {
-                        case 'no_existe':
-                           
-                            echo "
-                            <br>
-                            	<div class='alert alert-danger alert-dismissable'>
-					                <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
-					                <strong>Error</strong> Los datos introducidos no existen.
-					            </div>
-                            ";
-                            break;
-                            
-                        }
-                    }
-                    ?>
-                           
-					
-						<input type="hidden" name="grabar" value="si">
 							<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
 								<input class="input100" type="text" name="nom">
 								<span class="focus-input100" data-placeholder="Username"></span>
@@ -101,8 +73,8 @@ if (isset($_POST['grabar']) and $_POST['grabar']=='si')
 								No tienes una cuenta?
 							</span>
 
-							<a href="#" class="txt2">
-								Sign up
+							<a href="register.php" class="txt2">
+								Registrate
 							</a>
 						</li>
 					</ul>
